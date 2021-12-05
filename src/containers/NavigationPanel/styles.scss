@@ -1,0 +1,55 @@
+.navBlock {
+    background: #EFF0F3;
+    padding: 24px;
+
+    & > .burger {
+        background: transparent;
+        border: 0;
+        float: right;
+        margin-top: 10px;
+
+        @media screen and (min-width: 576px) {
+            display: none;
+        }
+    }
+
+    & > .nav {
+        display: flex;
+        flex-flow: column nowrap;
+        margin: -4px 0;
+        & > li {
+            flex: 0 1 auto;
+            margin: 4px 0;
+        }
+
+        list-style: none;
+        z-index: 1;
+
+        @media screen and (min-width: 576px) {
+            margin-top: 50px;
+        }
+        @media screen and (max-width: 575px) {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 0;
+            overflow-y: hidden;
+            
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 272px;
+                background: #EFF0F3;
+                z-index: -1;
+            }
+
+            &.show {
+                height: auto;
+                padding: 40px 20px 10px 20px;
+            }
+        }
+    }
+}
