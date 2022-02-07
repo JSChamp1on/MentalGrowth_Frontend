@@ -5,7 +5,7 @@ import { constants } from "@redux";
 const {
     METHOD_MGTEST,
 } = constants;
-const URL = 'http://localhost:5000/api/MG_test';
+const URL = `${env.API_LINK}/api/MG_test`;
 
 export const actionMgTest = () => dispatch => {
     dispatch({ type: METHOD_MGTEST, payload: { data: null, fail: null, loading: true } });

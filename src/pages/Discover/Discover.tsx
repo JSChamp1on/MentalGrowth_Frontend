@@ -24,12 +24,12 @@ const {
     HOMEPAGE,
 } = constants_app;
 
-export const Diet_ = () => {
+export const Discover: React.FC = (): React.ReactElement => {
     return (
         <div className={stylesCSS.wrapper}>
             <NavigationPanel className={stylesCSS.navigationPanel}/>
             <ContentArea className={stylesCSS.contentArea}>
-                <ContentHeader title="Diet"/>
+                <ContentHeader title="Discover"/>
                 <div className={stylesCSS.flexAlign}>
                     <img src={cupPNG} alt="cup"/>
                     <span style={{ opacity: 0.5 }}>The page is under construction...</span>

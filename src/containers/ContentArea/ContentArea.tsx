@@ -4,7 +4,10 @@ import React from "react";
 // styles
 import stylesCSS from "./styles.scss";
 
-export const ContentArea = (readonlyProps) => {
+// interfaces
+import { IReadonlyProps } from "./type";
+
+export const ContentArea: React.FC<IReadonlyProps> = (readonlyProps): React.ReactElement => {
     const {
         className: classNameHOK,
         children,

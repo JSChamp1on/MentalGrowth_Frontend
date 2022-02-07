@@ -4,7 +4,10 @@ import React from "react";
 // styles
 import stylesCSS from "./styles.scss";
 
-export const GreyButton = ({ label }) => {
+// interfaces
+import { IReadonlyProps } from "./type";
+
+export const GreyButton: React.FC<IReadonlyProps> = ({ label }): React.ReactElement => {
     return (
         <button type="button" className={stylesCSS.greyButton}>
             { label }

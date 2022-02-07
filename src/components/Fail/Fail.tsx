@@ -3,10 +3,13 @@ import React, { useState } from "react";
 
 // components
 import { Portal } from "@components/Portal";
-import { Modal, Designes } from "@components/Modal";
+import { Modal } from "@components/Modal";
 
-export const Fail = ({ payload }) => {
-    const [bShowModalState, bShowModalHandler] = useState(Boolean(!payload?.fail));
+// interfaces
+import { IReadonlyProps } from "./type";
+
+export const Fail: React.FC<IReadonlyProps> = ({ payload }) => {
+    const [bShowModalState, bShowModalHandler] = useState<boolean>(Boolean(!payload?.fail));
 
     if (!payload?.fail || !bShowModalState) {
         return null;

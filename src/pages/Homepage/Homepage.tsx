@@ -14,7 +14,10 @@ import { NavigationPanel } from "@containers/NavigationPanel";
 import { ContentArea } from "@containers/ContentArea/ContentArea";
 import { HomepageExercises } from "@containers/HomepageExercises";
 
-export const Homepage = (readonlyProps) => {
+// interfaces
+import { IReadonlyProps } from "./type";
+
+export const Homepage: React.FC<IReadonlyProps> = (readonlyProps): React.ReactElement => {
     useEffect(() => {
         readonlyProps.actionMgTest.call(readonlyProps);
     }, []);

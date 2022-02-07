@@ -4,7 +4,13 @@ import React, { Fragment } from "react";
 // styles
 import styleCSS from "./styles.scss";
 
-export const Popup1 = (readonlyProps) => {
+export interface IReadonlyProps_Popup1 {
+    title: string;
+    large_image: string;
+    steps: [];
+};
+
+export const Popup1: React.FC<IReadonlyProps_Popup1> = (readonlyProps): React.ReactElement => {
     const {
         title,
         large_image,

@@ -10,9 +10,13 @@ const
     }), 
     mapDispatchToProps = dispatch => ({
         actionMgTest: function () {
-            if (this.methodMgTest === null) {
-                dispatch(actionMgTest());
-            }
+            // saga
+            dispatch({ type: 'RUN' });
+
+            // thank
+            // if (this.methodMgTest === null) {
+            //     dispatch(actionMgTest());
+            // }
         },
     });
 

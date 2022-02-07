@@ -7,15 +7,18 @@ import stylesCSS from "./styles.scss";
 // images
 import closeSVG from "@images/close.svg";
 
-export const Modal = (readonlyProps) => {
+// interfaces
+import { IReadonlyProps } from "./type";
+
+export const Modal: React.FC<IReadonlyProps> = (readonlyProps): React.ReactElement => {
     const {
         onClickClose,
         children,
     } = readonlyProps;
 
-    const closeArea = useRef(null);
+    const closeArea = useRef<null | HTMLDivElement>(null);
 
-    const onClickArea = (event) => {
+    const onClickArea: React.MouseEventHandler<HTMLDivElement> = (event: React.MouseEvent): void => {
         if (closeArea.current === event.target) {
             onClickClose(event);
         }

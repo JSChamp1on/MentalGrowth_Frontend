@@ -4,7 +4,10 @@ import React from "react";
 // styles
 import styleCSS from "./styles.scss";
 
-export const Spinner = ({ payload }) => {
+// interfaces
+import { IReadonlyProps } from "./type";
+
+export const Spinner: React.FC<IReadonlyProps> = ({ payload }): React.ReactElement | null => {
     if (!payload?.loading) {
         return null;
     }

@@ -4,7 +4,10 @@ import React from "react";
 // style
 import styleCSS from "./styles.scss";
 
-export const ContentHeader = (readonlyProps) => {
+// interfaces
+import { IReadonlyProps } from "./type";
+
+export const ContentHeader: React.FC<IReadonlyProps> = (readonlyProps): React.ReactElement => {
     const {
         title,
         description,

@@ -19,6 +19,7 @@ module.exports = {
         path: path.join(__dirname, '../build'),
         publicPath: BASE_PATH,
     },
+    devtool: "inline-source-map",
     module: {
         rules: [
             {
@@ -52,6 +53,13 @@ module.exports = {
                         options: {sourceMap: true},
                     },
                 ],
+            },
+            {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "ts-loader",
+                },
             },
             {
                 test: /\.jsx?$/,
@@ -108,7 +116,7 @@ module.exports = {
         }),
     ],
     resolve: {
-        extensions: [".js", ".jsx"],
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
         modules: ["node_modules"],
         alias: {
             "@public": path.join(__dirname, "../public"),

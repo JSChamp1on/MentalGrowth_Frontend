@@ -29,7 +29,7 @@ export const NavLink = (readonlyProps) => {
     ];
 
     return (
-        <Link to={to} className={[classNameHOK, stylesCSS.navLink].join(' ')} style={null}>
+        <Link to={to} className={[classNameHOK, stylesCSS.navLink].join(' ')} style={{}}>
             { createElement(...param) }
         </Link>
     );

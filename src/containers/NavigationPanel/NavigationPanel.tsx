@@ -18,6 +18,9 @@ import burgerSVG from "@images/burger.svg";
 import { NavLink } from "@components/NavLink";
 import { NavigationButton } from "@components/Buttons";
 
+// interfaces
+import { IReadonlyProps } from "./type";
+
 // constants
 const {
     HOMEPAGE,
@@ -25,7 +28,7 @@ const {
     DIET,
 } = constants_app;
 
-export const NavigationPanel = (readonlyProps) => {
+export const NavigationPanel: React.FC<IReadonlyProps> = (readonlyProps): React.ReactElement => {
     const {
         className: classNameHOK,
     } = readonlyProps;
@@ -34,7 +37,7 @@ export const NavigationPanel = (readonlyProps) => {
         refBurger = useRef(null),
         refNav = useRef(null);
 
-    const [bIsOpenState, bIsOpenHandler] = useState(false);
+    const [bIsOpenState, bIsOpenHandler] = useState<boolean>(false);
 
     useEffect(() => {
         window.addEventListener('click', closeMenu, false);
@@ -44,12 +47,8 @@ export const NavigationPanel = (readonlyProps) => {
         };
     }, []);
 
-    const closeMenu = (event) => {
-        console.log(
-            event,
-            refBurger
-        )
-        if (!bIsOpenState && !event.path.some(target => target === refBurger.current || target === refNav.current)) {
+    const closeMenu = (event: any): void => {
+        if (!bIsOpenState && !event.path.some((target: React.ReactNode) => target === refBurger.current || target === refNav.current)) {
             bIsOpenHandler(false);
         }
     };
