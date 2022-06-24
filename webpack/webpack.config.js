@@ -19,6 +19,7 @@ module.exports = {
         path: path.join(__dirname, '../build'),
         publicPath: BASE_PATH,
     },
+    devtool: "source-map",
     module: {
         rules: [
             {
@@ -31,7 +32,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.scss$/,
+                test: /\.s(a|c)ss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     {
@@ -52,6 +53,13 @@ module.exports = {
                         options: {sourceMap: true},
                     },
                 ],
+            },
+            {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "ts-loader",
+                },
             },
             {
                 test: /\.jsx?$/,
@@ -108,17 +116,17 @@ module.exports = {
         }),
     ],
     resolve: {
-        extensions: [".js", ".jsx"],
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
         modules: ["node_modules"],
         alias: {
             "@public": path.join(__dirname, "../public"),
             "@app": path.join(__dirname, "../src/app"),
             "@assets": path.join(__dirname, "../src/assets"),
-            "@images": path.join(__dirname, "../src/assets/images"),
             "@components": path.join(__dirname, "../src/components"),
             "@containers": path.join(__dirname, "../src/containers"),
             "@pages": path.join(__dirname, "../src/pages"),
             "@redux": path.join(__dirname, "../src/redux"),
+            "@styles": path.join(__dirname, "../src/styles"),
         },
     },
     devServer: {
@@ -126,7 +134,7 @@ module.exports = {
             directory: path.join(__dirname, '../dist'),
         },
         compress: false,
-        port: 3000,
+        port: 2999,
         historyApiFallback: true,
     },
 };

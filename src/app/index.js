@@ -2,7 +2,7 @@
  * Hub file
  */
 
-export * as constants from "./constants.json";
+export * as paths from "./paths.json";
 export { App } from "./App";
 export { Redux } from "./Redux";
 export { Router } from "./Router";

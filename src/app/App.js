@@ -2,7 +2,7 @@
 import React from "react";
 
 // styles
-import "./styles.scss";
+import "@styles/global.scss";
 
 // app
 import { Redux, Router } from "@app";
